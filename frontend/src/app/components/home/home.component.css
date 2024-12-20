@@ -1,0 +1,159 @@
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    z-index: -1;
+}
+
+.letter {
+    color: rgba(0, 255, 0, 0.363);
+    font-size: 0.8rem;
+    font-family: monospace;
+    opacity: 0.5;
+    position: absolute;
+    animation: moveDown 4s linear infinite;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+.container {
+    width: 100%;
+    padding: 10px 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 120px;
+}
+
+nav a {
+    font-weight: 500;
+    margin-right: 20px;
+    font-size: 1.3em;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.search {
+    width: 100px;
+}
+
+.section1 {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section1 h1 {
+    color: var(--blanco);
+    font-size: 4.5em;
+}
+
+.section1 h2 {
+    color: var(--blanco);
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.section1 button {
+    --c: var(--verde);
+    color: var(--c);
+    font-size: 1.4em;
+    border: 4px solid var(--c);
+    border-radius: 0.5em;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    cursor: pointer;
+    background: transparent;
+}
+
+.section1 button:hover {
+    color: var(--blanco);
+}
+
+.section1 button span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.section1 button:hover span {
+    transform: translateY(0) scale(2);
+}
+
+/* Configuración de los spans individuales */
+.section1 button span:nth-child(1) {
+    --n: 1;
+}
+
+.section1 button span:nth-child(2) {
+    --n: 2;
+}
+
+.section1 button span:nth-child(3) {
+    --n: 3;
+}
+
+.section1 button span:nth-child(4) {
+    --n: 4;
+}
+
+.section1 h1 span {
+    color: var(--verde);
+    text-shadow: 1px -2px 8px var(--verde);
+    font-family: monospace;
+    border-right: 2px solid var(--verde);
+    animation: blinkCursor 0.7s steps(2) infinite;
+    font-family: "League Spartan", sans-serif;
+}
+
+@keyframes blinkCursor {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--verde);
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="animated-background">
+    <span *ngFor="let letter of letters" class="letter" [style.left]="letter.x" [style.top]="letter.y">
+        {{ letter.char }}
+    </span>
+</div>
+<div class="container">
+    <nav>
+        <img src="/logo.png" alt="logo">
+        <div>
+            <a href="">SOBRE MI</a>
+            <a href="">PORTAFOLIO</a>
+            <a href="">CONTACTO</a>
+        </div>
+        <div class="search"></div>
+    </nav>
+    <div class="section1">
+        <div>
+            <h1>SOY <span>{{ name }}</span></h1>
+            <h2>DESARROLLADOR WEB</h2>
+            <button type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                CONTÁCTAME
+            </button>
+        </div>
+    </div>
+</div>
